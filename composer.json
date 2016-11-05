@@ -1,0 +1,13 @@
+{
+	"name": "aucor/polylang-smart-language-select-disabler",
+	"description": "",
+	"license": "GPLv2 or later",
+	"type": "wordpress-plugin",
+	"homepage": "https://github.com/aucor/polylang-smart-language-select-disabler",
+	"authors": [
+		{
+			"name": "Teemu Suoranta",
+			"email": "teemu@aucor.fi"
+		}
+	]
+}
