@@ -35,7 +35,7 @@ Download and activate. That's it. You will need Polylang, too (d'oh).
 
 **Composer:**
 ```
-$ composer aucor/polylang-smart-language-select-disabler
+$ composer require aucor/polylang-smart-language-select-disabler
 ```
 **With composer.json:**
 ```
