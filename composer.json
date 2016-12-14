@@ -1,7 +1,7 @@
 {
 	"name": "aucor/polylang-smart-language-select-disabler",
 	"description": "",
-	"license": "GPLv2 or later",
+	"license": "GPL-2.0+",
 	"type": "wordpress-plugin",
 	"homepage": "https://github.com/aucor/polylang-smart-language-select-disabler",
 	"authors": [

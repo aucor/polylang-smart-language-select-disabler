@@ -63,13 +63,18 @@ add_filter('polylang-disable-language-select', 'my_polylang_disable_language_sel
 ```
 
 
-## Issues and feature whishlist
-
-**Issues:**
+## Issues
 
  * There is a tiny delay for disable to happen. Maybe another JS hook would help?
-
+ * No disabling for media
+ * No disabling when adding a new term (has weird bugs)
  
- **Feature whishlist:**
+## Releases
 
- * You tell me.
+### 0.1.1 Fix bug when adding a new term translation
+
+Disabling the language select messes up creating new term translation. The translation wasn't linked to the original term because of the disabled attribute. Tried to remove the disabled attribute on submit but couldn't get it work for some reason with WordPress admin form. Removed the disabling for now on that view.
+
+### 0.1.0 Initial release
+
+

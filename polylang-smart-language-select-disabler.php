@@ -2,7 +2,7 @@
 /*
 Plugin Name: Polylang Add-on: Smart Language Select Disabler
 Plugin URI: 
-Version: 0.1.0
+Version: 0.1.1
 Author: Aucor Oy
 Author URI: https://github.com/aucor
 Description: Disable content language select when there's translations in Polylang
@@ -64,7 +64,7 @@ class PolylangSmartLanguageSelectDisabler {
 				<?php
 			}
 
-		} elseif ($current_screen->base == 'term' || $current_screen->base == 'edit-tags' ) {
+		} elseif ($current_screen->base == 'term' ) {
 
 			// $_GET['tag_ID'] has ID for all taxonomies
 			if( isset( $_GET['tag_ID'] ) ) {
