@@ -2,7 +2,7 @@
 /*
 Plugin Name: Polylang Add-on: Smart Language Select Disabler
 Plugin URI: 
-Version: 1.0.0
+Version: 1.0.1
 Author: Aucor Oy
 Author URI: https://github.com/aucor
 Description: Disable content language select when there's translations in Polylang
@@ -69,10 +69,21 @@ class PolylangSmartLanguageSelectDisabler {
 
 		if ($disable_translations) {
 		?>
+
 			<style>
-				#select-post-language .pll-select-flag,
-				#select-term-language, .pll-select-flag {
+				
+				.wp-admin #post_lang_choice,
+				.wp-admin #term_lang_choice {
+					display: none !important;
+				}
+
+				.wp-admin #select-post-language .pll-select-flag,
+				.wp-admin #select-term-language, .pll-select-flag {
 					margin-right: 6px;
+				}
+
+				.wp-admin #select-edit-term-language .description {
+					display: none; /* Description doesn't apply */
 				}
 			</style>
 
@@ -84,13 +95,14 @@ class PolylangSmartLanguageSelectDisabler {
 						return false;
 					}
 
-					// hide the select
-					el.style.display = 'none';
+					// get current language
+					var label = el.options[el.selectedIndex].innerHTML;
 
 					// create <p>
 					var p = document.createElement('p');
 					p.style.display = 'inline-block';
-					p.textContent = 'Hello world.';
+					p.style.margin = '0';
+					p.textContent = label;
 
 					// insert <p>
 					el.parentNode.insertBefore(p, el.nextSibling);
@@ -110,6 +122,7 @@ class PolylangSmartLanguageSelectDisabler {
 
 					});
 				}
+
 			</script>
 
 		<?php

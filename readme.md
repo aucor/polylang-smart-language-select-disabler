@@ -69,6 +69,10 @@ add_filter('polylang-disable-language-select', 'my_polylang_disable_language_sel
  
 ## Releases
 
+### 1.0.1 Disable functionality rewritten
+
+Added some missing stuff because some changes dropped in 1.0.0 (facepalm)
+
 ### 1.0.0 Disable functionality rewritten
 
 The HTML attribute "disabled" caused many problems. The disabling was changed so that the select is hidden with CSS and in its place, plain paragraph with current language is displayed.
