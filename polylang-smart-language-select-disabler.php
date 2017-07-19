@@ -76,41 +76,41 @@ class PolylangSmartLanguageSelectDisabler {
 				}
 			</style>
 
-				<script>
+			<script>
 
-					function polylang_addon_disable_language_select(el) {
+				function polylang_addon_disable_language_select(el) {
 
-						if(el == null) {
-							return false;
-						}
-
-						// hide the select
-						el.style.display = 'none';
-
-						// create <p>
-						var p = document.createElement('p');
-						p.style.display = 'inline-block';
-						p.textContent = 'Hello world.';
-
-						// insert <p>
-						el.parentNode.insertBefore(p, el.nextSibling);
-
+					if(el == null) {
+						return false;
 					}
 
-					if(typeof addEventListener === 'function') {
-						document.addEventListener('DOMContentLoaded', function() {
+					// hide the select
+					el.style.display = 'none';
 
-							// posts
-							var post_lang_choice = document.getElementById('post_lang_choice');
-							polylang_addon_disable_language_select(post_lang_choice);
+					// create <p>
+					var p = document.createElement('p');
+					p.style.display = 'inline-block';
+					p.textContent = 'Hello world.';
 
-							// terms
-							var term_lang_choice = document.getElementById('term_lang_choice');
-							polylang_addon_disable_language_select(term_lang_choice);
+					// insert <p>
+					el.parentNode.insertBefore(p, el.nextSibling);
 
-						});
-					}
-				</script>
+				}
+
+				if(typeof addEventListener === 'function') {
+					document.addEventListener('DOMContentLoaded', function() {
+
+						// posts
+						var post_lang_choice = document.getElementById('post_lang_choice');
+						polylang_addon_disable_language_select(post_lang_choice);
+
+						// terms
+						var term_lang_choice = document.getElementById('term_lang_choice');
+						polylang_addon_disable_language_select(term_lang_choice);
+
+					});
+				}
+			</script>
 
 		<?php
 		}
