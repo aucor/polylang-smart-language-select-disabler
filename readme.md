@@ -6,7 +6,7 @@
 
 **License:** GPLv2 or later
 
-![polylang-smart-disable-language-select](https://cloud.githubusercontent.com/assets/9577084/20032689/c792fba8-a398-11e6-8c49-1bfbbff0a3c9.jpg)
+![polylang-smart-disable-language-select](https://user-images.githubusercontent.com/9577084/28357103-fa19a40c-6c72-11e7-8901-06700b4b4384.jpg)
 
 
 ## Why this plugin exists?
@@ -70,6 +70,10 @@ add_filter('polylang-disable-language-select', 'my_polylang_disable_language_sel
  * No disabling when adding a new term (has weird bugs)
  
 ## Releases
+
+### 1.0.0 Disable functionality rewritten
+
+The HTML attribute "disabled" caused many problems. The disabling was changed so that the select is hidden with CSS and in its place, plain paragraph with current language is displayed.
 
 ### 0.1.1 Fix bug when adding a new term translation
 
