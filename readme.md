@@ -26,7 +26,7 @@ Changing the language of post when it has content is prone to errors. Even thoug
 ## What it does?
 
  * Checks if currently edited post or term has translations
- * If it has, prints one line of JS that disables the select
+ * If it has, hides select and shows the name of current language with CSS and vanilla JS
 
 
 ## Installation
