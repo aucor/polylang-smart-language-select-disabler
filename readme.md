@@ -65,9 +65,7 @@ add_filter('polylang-disable-language-select', 'my_polylang_disable_language_sel
 
 ## Issues
 
- * There is a tiny delay for disable to happen. Maybe another JS hook would help?
- * No disabling for media
- * No disabling when adding a new term (has weird bugs)
+ * No disabling for media (to-do)
  
 ## Releases
 
