@@ -132,5 +132,8 @@ class PolylangSmartLanguageSelectDisabler {
 
 }
 
-add_action( 'plugins_loaded', create_function('', 'global $polylang_smart_language_select_disabler; $polylang_smart_language_select_disabler = new PolylangSmartLanguageSelectDisabler();') );
+add_action( 'plugins_loaded', function() {
+	global $polylang_smart_language_select_disabler;
 
+	$polylang_smart_language_select_disabler = new PolylangSmartLanguageSelectDisabler();
+} );
