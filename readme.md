@@ -69,6 +69,8 @@ add_filter('polylang-disable-language-select', 'my_polylang_disable_language_sel
  
 ## Releases
 
+### 1.0.2 Remove `create_function` usage and include license
+
 ### 1.0.1 Add changes that dropped somewhere along the way
 
 Added some missing stuff because some changes dropped in 1.0.0 (facepalm)
