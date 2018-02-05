@@ -2,7 +2,7 @@
 /*
 Plugin Name: Polylang Add-on: Smart Language Select Disabler
 Plugin URI: 
-Version: 1.0.2
+Version: 1.0.3
 Author: Aucor Oy
 Author URI: https://github.com/aucor
 Description: Disable content language select when there's translations in Polylang
@@ -68,64 +68,67 @@ class PolylangSmartLanguageSelectDisabler {
 
 
 		if ($disable_translations) {
-		?>
 
-			<style>
-				
-				.wp-admin #post_lang_choice,
-				.wp-admin #term_lang_choice {
-					display: none !important;
-				}
+			add_action('in_admin_header', function() {
+				?>
 
-				.wp-admin #select-post-language .pll-select-flag,
-				.wp-admin #select-term-language, .pll-select-flag {
-					margin-right: 6px;
-				}
+					<style>
+						
+						.wp-admin #post_lang_choice,
+						.wp-admin #term_lang_choice {
+							display: none !important;
+						}
 
-				.wp-admin #select-edit-term-language .description {
-					display: none; /* Description doesn't apply */
-				}
-			</style>
+						.wp-admin #select-post-language .pll-select-flag,
+						.wp-admin #select-term-language, .pll-select-flag {
+							margin-right: 6px;
+						}
 
-			<script>
+						.wp-admin #select-edit-term-language .description {
+							display: none; /* Description doesn't apply */
+						}
+					</style>
 
-				function polylang_addon_disable_language_select(el) {
+					<script>
 
-					if(el == null) {
-						return false;
-					}
+						function polylang_addon_disable_language_select(el) {
 
-					// get current language
-					var label = el.options[el.selectedIndex].innerHTML;
+							if(el == null) {
+								return false;
+							}
 
-					// create <p>
-					var p = document.createElement('p');
-					p.style.display = 'inline-block';
-					p.style.margin = '0';
-					p.textContent = label;
+							// get current language
+							var label = el.options[el.selectedIndex].innerHTML;
 
-					// insert <p>
-					el.parentNode.insertBefore(p, el.nextSibling);
+							// create <p>
+							var p = document.createElement('p');
+							p.style.display = 'inline-block';
+							p.style.margin = '0';
+							p.textContent = label;
 
-				}
+							// insert <p>
+							el.parentNode.insertBefore(p, el.nextSibling);
 
-				if(typeof addEventListener === 'function') {
-					document.addEventListener('DOMContentLoaded', function() {
+						}
 
-						// posts
-						var post_lang_choice = document.getElementById('post_lang_choice');
-						polylang_addon_disable_language_select(post_lang_choice);
+						if(typeof addEventListener === 'function') {
+							document.addEventListener('DOMContentLoaded', function() {
 
-						// terms
-						var term_lang_choice = document.getElementById('term_lang_choice');
-						polylang_addon_disable_language_select(term_lang_choice);
+								// posts
+								var post_lang_choice = document.getElementById('post_lang_choice');
+								polylang_addon_disable_language_select(post_lang_choice);
 
-					});
-				}
+								// terms
+								var term_lang_choice = document.getElementById('term_lang_choice');
+								polylang_addon_disable_language_select(term_lang_choice);
 
-			</script>
+							});
+						}
 
-		<?php
+					</script>
+
+				<?php
+			});
 		}
 
 	}
