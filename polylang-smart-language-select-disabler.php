@@ -62,6 +62,17 @@ class PolylangSmartLanguageSelectDisabler {
 			}
 
 		}
+		
+		
+		// Posts bulk edit
+		if( $current_screen->base === 'edit' ) {
+			$disable_translations = true;
+		}
+
+		// Terms bulk edit
+		if( $current_screen->base === 'edit-tags' ) {
+			$disable_translations = true;
+		}
 
 		// Give filter to add custom logic for disabler
 		$disable_translations = apply_filters( 'polylang-disable-language-select', $disable_translations, $current_screen );
@@ -73,7 +84,12 @@ class PolylangSmartLanguageSelectDisabler {
 				?>
 
 					<style>
-						
+						/* Bulk edit */
+						.wp-admin .inline-edit-row select[name="inline_lang_choice"] {
+							display: none !important;
+						}
+
+						/* Edit screens */
 						.wp-admin #post_lang_choice,
 						.wp-admin #term_lang_choice {
 							display: none !important;
@@ -91,14 +107,16 @@ class PolylangSmartLanguageSelectDisabler {
 
 					<script>
 
-						function polylang_addon_disable_language_select(el) {
+						function polylang_addon_disable_language_select(el, label) {
 
 							if(el == null) {
 								return false;
 							}
 
-							// get current language
-							var label = el.options[el.selectedIndex].innerHTML;
+							// get current language, if not already set
+							if(label == null) {
+								var label = el.options[el.selectedIndex].innerHTML;
+							}
 
 							// create <p>
 							var p = document.createElement('p');
@@ -112,6 +130,23 @@ class PolylangSmartLanguageSelectDisabler {
 						}
 
 						if(typeof addEventListener === 'function') {
+							// Bulk edit
+							document.addEventListener( 'DOMNodeInserted', function( e ) {
+								var t = e.target;
+
+								// WP inserts the quick edit from
+								if ( '[object HTMLTableRowElement]' == Object.prototype.toString.call(t) && 'inline-edit' == t.getAttribute( 'id' ) ) {
+									// timeout so that inline lang choice gets real value
+									setTimeout(function() {
+										var lang_choice = document.getElementsByName('inline_lang_choice');
+										var lang_choice = lang_choice[0];
+										var label =  lang_choice.options[ lang_choice.selectedIndex ].innerHTML
+										polylang_addon_disable_language_select(lang_choice, label);
+									}, 5);
+								}
+							} );
+
+							// Edit screens
 							document.addEventListener('DOMContentLoaded', function() {
 
 								// posts
