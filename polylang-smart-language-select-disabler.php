@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Polylang Add-on: Smart Language Select Disabler
-Plugin URI: 
+Plugin URI:
 Version: 1.0.3
 Author: Aucor Oy
 Author URI: https://github.com/aucor
@@ -20,9 +20,10 @@ class PolylangSmartLanguageSelectDisabler {
 
 		// Check that Polylang is active
 		global $polylang;
-		
+
 		if (isset($polylang)) {
 			add_action('current_screen', array(&$this, 'maybe_disable_language_select'));
+			add_action('pll_default_lang_row_action', array(&$this, 'maybe_disable_default_language_select'), 10, 2);
 		}
 	}
 
@@ -62,8 +63,7 @@ class PolylangSmartLanguageSelectDisabler {
 			}
 
 		}
-		
-		
+
 		// Posts bulk edit
 		if( $current_screen->base === 'edit' ) {
 			$disable_translations = true;
@@ -76,7 +76,6 @@ class PolylangSmartLanguageSelectDisabler {
 
 		// Give filter to add custom logic for disabler
 		$disable_translations = apply_filters( 'polylang-disable-language-select', $disable_translations, $current_screen );
-
 
 		if ($disable_translations) {
 
@@ -166,6 +165,33 @@ class PolylangSmartLanguageSelectDisabler {
 			});
 		}
 
+	}
+
+	/**
+	 *  Maybe disable Polylang default language change select
+	 *
+	 *  @param  string $s    html markup of the action
+	 *  @param  object $item
+	 *  @return string
+	 */
+	function maybe_disable_default_language_select( $s, $item ) {
+		$disable = true;
+
+		// Give get parameter to allow chaning the default language
+		if ( isset( $_GET['iknowwhatimdoing'] ) ) {
+			$disable = false;
+		}
+
+		// Give filter to add custom logic for disabler
+		$disable = apply_filters( 'polylang-disable-default-language-select', $disable, $item );
+
+		// Return empty string if disabled
+		if ( $disable ) {
+			return '';
+		}
+
+		// Return original string containing link to change
+		return $s;
 	}
 
 }
