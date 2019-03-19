@@ -2,7 +2,7 @@
 /*
 Plugin Name: Polylang Add-on: Smart Language Select Disabler
 Plugin URI:
-Version: 1.0.3
+Version: 1.1.0
 Author: Aucor Oy
 Author URI: https://github.com/aucor
 Description: Disable content language select when there's translations in Polylang

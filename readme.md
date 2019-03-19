@@ -1,13 +1,12 @@
 # Polylang Add-on: Smart Language Select Disabler
 
-**Contributors:** [Teemu Suoranta](https://github.com/TeemuSuoranta)
+**Contributors:** [Teemu Suoranta](https://github.com/TeemuSuoranta), [Timi Wahalahti](https://github.com/timiwahalahti)
 
 **Tags:** Polylang, Admin, Language Select, WordPress
 
 **License:** GPLv2 or later
 
 ![polylang-smart-disable-language-select](https://user-images.githubusercontent.com/9577084/28357103-fa19a40c-6c72-11e7-8901-06700b4b4384.jpg)
-
 
 ## Why this plugin exists?
 
@@ -23,11 +22,15 @@ I've seen that users have multiple times changed post's language when they meant
 
 Changing the language of post when it has content is prone to errors. Even though the language can be changed, the images added to content may still be in wrong language. Custom fields, relations etc are not automatically changed. Language should be changed right away before adding content.
 
+### Changing the site default language is risky business anyway
+
+Changing the site default language is prone to errors. Even though the language can be changed, links in content may still be in wrong language. Custom fields, relations etc are not automatically changed. Language should be changed only if user knows what they are doing.
+
 ## What it does?
 
  * Checks if currently edited post or term has translations
  * If it has, hides select and shows the name of current language with CSS and vanilla JS
-
+ * Removes option to change default language unless user does not provide `iknowwhatimdoing` GET-parameter or allows it via filter
 
 ## Installation
 
@@ -62,12 +65,20 @@ function my_polylang_disable_language_select($disable_select, $current_screen) {
 add_filter('polylang-disable-language-select', 'my_polylang_disable_language_select', 10, 2);
 ```
 
+Allow default language change:
+```
+add_filter('polylang-disable-default-language-select', '__return_true');
+```
 
 ## Issues
 
  * No disabling for media (to-do)
  
 ## Releases
+
+### 1.1.0 Disable default language change select
+
+Chaning site default language will probably cause some issues if you don't know what you are doing. Disable the availability to do so, unless user know what they are doing.
 
 ### 1.0.2 Remove `create_function` usage and include license
 
