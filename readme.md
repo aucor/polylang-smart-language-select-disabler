@@ -30,7 +30,7 @@ Changing the site default language is prone to errors. Even though the language 
 
  * Checks if currently edited post or term has translations
  * If it has, hides select and shows the name of current language with CSS and vanilla JS
- * Removes option to change default language unless user does not provide `iknowwhatimdoing` GET-parameter or allows it via filter
+ * Removes option to change default language unless the user does not provide `iknowwhatimdoing` GET-parameter or allows it via filter
 
 ## Installation
 
@@ -78,7 +78,7 @@ add_filter('polylang-disable-default-language-select', '__return_true');
 
 ### 1.1.0 Disable default language change select
 
-Chaning site default language will probably cause some issues if you don't know what you are doing. Disable the availability to do so, unless user know what they are doing.
+Changing site default language will probably cause some issues if you don't knows what you are doing. Disable the availability to do so, unless the user know what they are doing.
 
 ### 1.0.2 Remove `create_function` usage and include license
 
