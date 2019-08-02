@@ -1,6 +1,9 @@
 === Polylang Add-on: Smart Language Select Disabler ===
 Contributors: TeemuSuoranta
 Tags: olylang, Admin, Language Select, WordPress
+Requires at least: 4.7.3
+Tested up to: 5.2.2
+Requires PHP: 7.0
 License: GPLv2 or later
 
 == Description ==
