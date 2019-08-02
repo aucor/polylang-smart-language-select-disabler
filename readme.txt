@@ -72,33 +72,27 @@ Download and activate. That\'s it. You will need Polylang, too (d\'oh).
 
 == Changelog ==
 = 1.1.0 = 
+* Disable default language change select
 
-Disable default language change select
-
-Changing site default language will probably cause some issues if you don\'t knows what you are doing. Disable the availability to do so, unless the user know what they are doing. Also, use WordPress coding standards to make contributing easier. Props to @timiwahalahti for changes in this release.
+* Changing site default language will probably cause some issues if you don\'t knows what you are doing. Disable the availability to do so, unless the user know what they are doing. Also, use WordPress coding standards to make contributing easier. Props to @timiwahalahti for changes in this release.
 
 = 1.0.2 =
-
-Remove `create_function` usage and include license
+* Remove `create_function` usage and include license
 
 = 1.0.1 =
+* Add changes that dropped somewhere along the way
 
-Add changes that dropped somewhere along the way
-
-Added some missing stuff because some changes dropped in 1.0.0 (facepalm)
+* Added some missing stuff because some changes dropped in 1.0.0 (facepalm)
 
 = 1.0.0 =
+* Disable functionality rewritten
 
-Disable functionality rewritten
-
-The HTML attribute \"disabled\" caused many problems. The disabling was changed so that the select is hidden with CSS and in its place, plain paragraph with current language is displayed.
+*The HTML attribute \"disabled\" caused many problems. The disabling was changed so that the select is hidden with CSS and in its place, plain paragraph with current language is displayed.
 
 = 0.1.1 =
+* Fix bug when adding a new term translation
 
-Fix bug when adding a new term translation
-
-Disabling the language select messes up creating new term translation. The translation wasn\'t linked to the original term because of the disabled attribute. Tried to remove the disabled attribute on submit but couldn\'t get it work for some reason with WordPress admin form. Removed the disabling for now on that view.
+* Disabling the language select messes up creating new term translation. The translation wasn\'t linked to the original term because of the disabled attribute. Tried to remove the disabled attribute on submit but couldn\'t get it work for some reason with WordPress admin form. Removed the disabling for now on that view.
 
 = 0.1.0 =
-
-Initial release
+* Initial release
