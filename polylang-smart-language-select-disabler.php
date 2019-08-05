@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Polylang Add-on: Smart Language Select Disabler
+ * Plugin Name: Smart Language Select Disabler for Polylang
  * Plugin URI: https://github.com/aucor/polylang-smart-language-select-disabler
  * Version: 1.1.0
  * Author: Aucor Oy
@@ -8,7 +8,6 @@
  * Description: Disable content language select when there's translations in Polylang
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: polylang-smart-language-select-disabler
  *
  * @package polylang-smart-language-select-disabler
  */
