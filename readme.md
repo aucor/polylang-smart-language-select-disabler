@@ -1,4 +1,4 @@
-# Polylang Add-on: Smart Language Select Disabler
+# Smart Language Select Disabler for Polylang
 
 **Contributors:** [Teemu Suoranta](https://github.com/TeemuSuoranta), [Timi Wahalahti](https://github.com/timiwahalahti)
 
