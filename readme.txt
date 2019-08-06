@@ -74,6 +74,9 @@ add_filter('polylang-disable-default-language-select', '__return_true');
 Download and activate. That's it. You will need Polylang, too (d'oh).
 
 == Changelog ==
+
+= 1.1.1 =
+* WordPress.org release
 = 1.1.0 = 
 * Disable default language change select
 

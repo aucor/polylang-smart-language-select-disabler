@@ -76,6 +76,8 @@ add_filter('polylang-disable-default-language-select', '__return_true');
  
 ## Releases
 
+### 1.1.1 WordPress.org release ###
+
 ### 1.1.0 Disable default language change select
 
 Changing site default language will probably cause some issues if you don't knows what you are doing. Disable the availability to do so, unless the user know what they are doing. Also, use WordPress coding standards to make contributing easier. Props to @timiwahalahti for changes in this release.
